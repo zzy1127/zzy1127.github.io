@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Alioth&#39;s blog">
+<meta property="og:url" content="http://example.com/index.html">
+<meta property="og:site_name" content="Alioth&#39;s blog">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:author" content="Alioth">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : true,
+    isPost : false,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Alioth's blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Alioth's blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content index posts-expand">
+            
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/13/Java%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9C%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Alioth">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alioth's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/13/Java%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9C%9F/" class="post-title-link" itemprop="url">Java从入门到入土</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-13 16:09:00" itemprop="dateCreated datePublished" datetime="2022-05-13T16:09:00+08:00">2022-05-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-05-14 10:35:38" itemprop="dateModified" datetime="2022-05-14T10:35:38+08:00">2022-05-14</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E8%AF%AD%E8%A8%80/" itemprop="url" rel="index"><span itemprop="name">语言</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022/05/13/Java%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9C%9F/" class="post-meta-item leancloud_visitors" data-flag-title="Java从入门到入土" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="基本特征"><a href="#基本特征" class="headerlink" title="基本特征"></a>基本特征</h2><ul>
+<li><p>Java核心机制：JVM虚拟机、代码安全性检测、垃圾回收</p>
+</li>
+<li><p>JDK&#x3D;JRE(JVM+API)+Tools</p>
+</li>
+<li><p>面向对象:继承、封装、多态</p>
+</li>
+<li><p>程序分类：Applet(嵌入网页)、Application</p>
+</li>
+<li><p>Tools: javac编译 java运行 jar打包 javadoc生成文档 javap反汇编</p>
+<h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2></li>
+</ul>
+<h3 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h3><p>1.使用Scanner类输入</p>
+<pre><code>先创建Scanner类对象
+</code></pre>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">scan</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        <span class="type">String</span> <span class="variable">str_1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>();</span><br><span class="line">        <span class="type">String</span> <span class="variable">str_2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>();</span><br><span class="line">        <span class="type">int</span> <span class="variable">num_1</span> <span class="operator">=</span> scan.nextInt();<span class="comment">//输入整数</span></span><br><span class="line">        <span class="type">double</span> <span class="variable">num_2</span> <span class="operator">=</span> scan.nextFloat();<span class="comment">//输入浮点数</span></span><br><span class="line">        str_1 = scan.nextLine();<span class="comment">//输入字符串，可包含空格</span></span><br><span class="line">        str_2 = scan.next();<span class="comment">//输入字符串，不包含空格</span></span><br><span class="line">        scan.close();<span class="comment">//关闭输入流 一旦关闭则无法再读入</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>2.使用BufferedReader类输入</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">        <span class="type">int</span> num_1;</span><br><span class="line">        <span class="type">String</span> <span class="variable">str_1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>();</span><br><span class="line">        <span class="type">BufferedReader</span> <span class="variable">bf</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(System.in));</span><br><span class="line">        <span class="comment">//可能会有异常 要用try-catch</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            str_1 = bf.readLine();<span class="comment">//读取一行字符串</span></span><br><span class="line">            num_1 = bf.read();<span class="comment">//读取单个字符并返回随对应的ASCII码</span></span><br><span class="line">            bf.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e)&#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>3.输出 使用<code>System.out</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;hello world&quot;</span>);<span class="comment">//换行输出</span></span><br><span class="line">    System.out.print(<span class="string">&quot;hello world&quot;</span>);<span class="comment">//不换行输出</span></span><br><span class="line">    System.out.printf(<span class="string">&quot;%.2f&quot;</span>, <span class="number">3.14</span>);<span class="comment">//格式化输出</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="数据、运算、流程控制"><a href="#数据、运算、流程控制" class="headerlink" title="数据、运算、流程控制"></a>数据、运算、流程控制</h3><ul>
+<li>数组</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> [] a = <span class="keyword">new</span> <span class="title class_">int</span>[size];<span class="comment">//一维</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> [][] a = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">3</span>][];<span class="comment">//二维</span></span><br><span class="line">a[<span class="number">0</span>] = <span class="keyword">new</span> <span class="title class_">int</span>[size];</span><br><span class="line">...</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>break和continue</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">label: <span class="keyword">while</span>()&#123;&#125;</span><br><span class="line"><span class="keyword">break</span>/<span class="keyword">continue</span> label;<span class="comment">//可以加参数跳转到指定标签</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p><code>&gt;&gt;</code>带符号右移位  <code>&gt;&gt;&gt;</code>无符号右移位</p>
+</li>
+<li><p><code>&amp; ｜</code>可以表示逻辑运算 <code>&amp;&amp; ||</code>表示短路逻辑运算（第一个成立则不判断第二个）</p>
+</li>
+<li><p>JAVA中字符采用Unicode编码，占两个字节</p>
+</li>
+</ul>
+<h3 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h3><ul>
+<li>封装、继承、多态</li>
+</ul>
+<h4 id="类"><a href="#类" class="headerlink" title="类"></a>类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">public</span>][<span class="keyword">abstract</span>|<span class="keyword">final</span>] <span class="keyword">class</span> <span class="title class_">className</span> [<span class="keyword">extends</span> <span class="title class_">superClassName</span>] [<span class="keyword">implements</span> <span class="title class_">InterfaceNameList</span>]&#123;</span><br><span class="line"></span><br><span class="line">    [<span class="keyword">public</span>|<span class="keyword">protected</span>|<span class="keyword">private</span>] [<span class="keyword">static</span>] [<span class="keyword">final</span>] [<span class="keyword">transient</span>] [<span class="keyword">volatile</span>] type variableName;<span class="comment">//字段定义</span></span><br><span class="line"></span><br><span class="line">    [<span class="keyword">public</span>|<span class="keyword">protected</span>|<span class="keyword">private</span>] [<span class="keyword">static</span>] [<span class="keyword">final</span>|<span class="keyword">abstract</span>] [<span class="keyword">native</span>] [<span class="keyword">synchronized</span>] </span><br><span class="line">    returnType <span class="title function_">methodName</span><span class="params">([paramList])</span><span class="comment">//方法定义</span></span><br><span class="line">    [<span class="keyword">throws</span> exceptionList]&#123;</span><br><span class="line">        statements</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>访问控制符</li>
+</ul>
+<p>类定义不加<code>public</code>则只能被同包中的访问</p>
+<p>成员变量</p>
+<p><img src="https://cdn.luogu.com.cn/upload/image_hosting/byw8n3g0.png"></p>
+<ul>
+<li>其他修饰符</li>
+</ul>
+<p><code>static</code>表示类本身具有的字段&#x2F;方法，不局限于某个实例</p>
+<p><code>static</code>方法中不能使用<code>this</code>、<code>super</code></p>
+<p><code>final</code>类不可以被继承 字段不可以被修改 方法不可以被重写</p>
+<p><code>static final=const</code></p>
+<p><code>abstract</code>抽象类不能实例化，只能被<code>extends </code>方法只能定义（用;不用{}）然后被子类重写</p>
+<ul>
+<li>继承</li>
+</ul>
+<p>只能<code>extends</code>一个父类，可用<code>super</code>代指</p>
+<p><code>this super</code>作构造函数时要放在第一行</p>
+<p>子类可以@override 重写父类方法</p>
+<ul>
+<li>实现接口</li>
+</ul>
+<p><code>implements</code> 可以实现多个接口</p>
+<h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">public</span>] <span class="keyword">interface</span> <span class="title class_">InterfaceName</span> [<span class="keyword">extends</span> <span class="title class_">superInterfaceList</span>]&#123;</span><br><span class="line">    <span class="type">type</span> <span class="variable">constantName</span> <span class="operator">=</span> Value;<span class="comment">//常量声明 </span></span><br><span class="line"></span><br><span class="line">    returnType <span class="title function_">methodName</span><span class="params">([paramList])</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<ul>
+<li><p>接口支持多继承，可以有多个接口为父类</p>
+</li>
+<li><p>接口中的字段为常量，可以被实现它的多个类使用，性质为<code>public static final</code></p>
+</li>
+<li><p>接口中的方法均为<code>public abstract</code></p>
+</li>
+</ul>
+<h4 id="枚举类"><a href="#枚举类" class="headerlink" title="枚举类"></a>枚举类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="title class_">Light</span>&#123;red, yellow, green&#125;<span class="comment">//定义</span></span><br><span class="line"><span class="type">Light</span> <span class="variable">light</span> <span class="operator">=</span> Light.red;</span><br><span class="line"><span class="keyword">switch</span>(light)&#123;<span class="keyword">case</span> red:... <span class="keyword">break</span>;&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Alioth"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Alioth</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+  <div class="links-of-blogroll motion-element">
+    <div class="links-of-blogroll-title"><i class="fa fa-link fa-fw"></i>
+      Links
+    </div>
+    <ul class="links-of-blogroll-list">
+        <li class="links-of-blogroll-item">
+          <a href="https://noone40404.github.io/" title="https:&#x2F;&#x2F;noone40404.github.io&#x2F;" rel="noopener" target="_blank">noone</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://cnblogs.com/wmq12138" title="https:&#x2F;&#x2F;cnblogs.com&#x2F;wmq12138" rel="noopener" target="_blank">Robin12138</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://wa-automaton.github.io/" title="https:&#x2F;&#x2F;wa-automaton.github.io&#x2F;" rel="noopener" target="_blank">_WA自动机</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="http://www.franky.pro/" title="http:&#x2F;&#x2F;www.franky.pro&#x2F;" rel="noopener" target="_blank">franky</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://williampetermatthew.github.io/" title="https:&#x2F;&#x2F;williampetermatthew.github.io&#x2F;" rel="noopener" target="_blank">Peter_Matthew</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://micardi.coding.me/" title="https:&#x2F;&#x2F;micardi.coding.me" rel="noopener" target="_blank">Micardi</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://syr_steven.coding.me/" title="https:&#x2F;&#x2F;syr_steven.coding.me" rel="noopener" target="_blank">Steven7</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://cs18.coding.me/" title="https:&#x2F;&#x2F;cs18.coding.me&#x2F;" rel="noopener" target="_blank">cs18</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.zybuluo.com/Bei-S/note/1381469" title="https:&#x2F;&#x2F;www.zybuluo.com&#x2F;Bei-S&#x2F;note&#x2F;1381469" rel="noopener" target="_blank">Yue-S</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://pb0207.github.io/" title="https:&#x2F;&#x2F;pb0207.github.io&#x2F;" rel="noopener" target="_blank">pb0207</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://www.zybuluo.com/KirinBill/note/878927" title="https:&#x2F;&#x2F;www.zybuluo.com&#x2F;KirinBill&#x2F;note&#x2F;878927" rel="noopener" target="_blank">KirinBill</a>
+        </li>
+        <li class="links-of-blogroll-item">
+          <a href="https://fancypei.github.io/" title="https:&#x2F;&#x2F;fancypei.github.io&#x2F;" rel="noopener" target="_blank">Fancy</a>
+        </li>
+    </ul>
+  </div>
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Alioth</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+<script>
+  (function() {
+    function leancloudSelector(url) {
+      url = encodeURI(url);
+      return document.getElementById(url).querySelector('.leancloud-visitors-count');
+    }
+
+    function addCount(Counter) {
+      var visitors = document.querySelector('.leancloud_visitors');
+      var url = decodeURI(visitors.id);
+      var title = visitors.dataset.flagTitle;
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          if (results.length > 0) {
+            var counter = results[0];
+            leancloudSelector(url).innerText = counter.time + 1;
+            Counter('put', '/classes/Counter/' + counter.objectId, { time: { '__op': 'Increment', 'amount': 1 } })
+              .catch(error => {
+                console.error('Failed to save visitor count', error);
+              });
+          } else {
+              Counter('post', '/classes/Counter', { title, url, time: 1 })
+                .then(response => response.json())
+                .then(() => {
+                  leancloudSelector(url).innerText = 1;
+                })
+                .catch(error => {
+                  console.error('Failed to create', error);
+                });
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    function showTime(Counter) {
+      var visitors = document.querySelectorAll('.leancloud_visitors');
+      var entries = [...visitors].map(element => {
+        return decodeURI(element.id);
+      });
+
+      Counter('get', '/classes/Counter?where=' + encodeURIComponent(JSON.stringify({ url: { '$in': entries } })))
+        .then(response => response.json())
+        .then(({ results }) => {
+          for (let url of entries) {
+            let target = results.find(item => item.url === url);
+            leancloudSelector(url).innerText = target ? target.time : 0;
+          }
+        })
+        .catch(error => {
+          console.error('LeanCloud Counter Error', error);
+        });
+    }
+
+    let { app_id, app_key, server_url } = {"enable":true,"app_id":"qmNUGazaejobxvy3jwdpRNkd-gzGzoHsz","app_key":"VgY23VexkwMqCBv9Bf0v6Lvz","server_url":null,"security":false};
+    function fetchData(api_server) {
+      var Counter = (method, url, data) => {
+        return fetch(`${api_server}/1.1${url}`, {
+          method,
+          headers: {
+            'X-LC-Id'     : app_id,
+            'X-LC-Key'    : app_key,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        });
+      };
+      if (CONFIG.page.isPost) {
+        if (CONFIG.hostname !== location.hostname) return;
+        addCount(Counter);
+      } else if (document.querySelectorAll('.post-title-link').length >= 1) {
+        showTime(Counter);
+      }
+    }
+
+    let api_server = app_id.slice(-9) !== '-MdYXbMMI' ? server_url : `https://${app_id.slice(0, 8).toLowerCase()}.api.lncldglobal.com`;
+
+    if (api_server) {
+      fetchData(api_server);
+    } else {
+      fetch('https://app-router.leancloud.cn/2/route?appId=' + app_id)
+        .then(response => response.json())
+        .then(({ api_server }) => {
+          fetchData('https://' + api_server);
+        });
+    }
+  })();
+</script>
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+          load: ['[tex]/mhchem'],
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+          packages: {'[+]': ['mhchem']},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//unpkg.com/valine/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'qmNUGazaejobxvy3jwdpRNkd-gzGzoHsz',
+      appKey     : 'VgY23VexkwMqCBv9Bf0v6Lvz',
+      placeholder: "有什么问题，欢迎留言指正与交流...",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : 'zh-cn' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : false,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
