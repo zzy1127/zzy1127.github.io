@@ -214,7 +214,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-17 18:59:43" itemprop="dateModified" datetime="2022-05-17T18:59:43+08:00">2022-05-17</time>
+                <time title="修改时间：2022-05-17 22:10:18" itemprop="dateModified" datetime="2022-05-17T22:10:18+08:00">2022-05-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -256,9 +256,9 @@
 <li><p>程序分类：Applet(嵌入网页)、Application</p>
 </li>
 <li><p>Tools: javac编译 java运行 jar打包 javadoc生成文档 javap反汇编</p>
-<h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2></li>
+</li>
 </ul>
-<h3 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h3><p>1.使用Scanner类输入</p>
+<h2 id="基础语法"><a href="#基础语法" class="headerlink" title="基础语法"></a>基础语法</h2><h3 id="输入输出"><a href="#输入输出" class="headerlink" title="输入输出"></a>输入输出</h3><p>1.使用Scanner类输入</p>
 <pre><code>先创建Scanner类对象
 </code></pre>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">scan</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        <span class="type">String</span> <span class="variable">str_1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>();</span><br><span class="line">        <span class="type">String</span> <span class="variable">str_2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>();</span><br><span class="line">        <span class="type">int</span> <span class="variable">num_1</span> <span class="operator">=</span> scan.nextInt();<span class="comment">//输入整数</span></span><br><span class="line">        <span class="type">double</span> <span class="variable">num_2</span> <span class="operator">=</span> scan.nextFloat();<span class="comment">//输入浮点数</span></span><br><span class="line">        str_1 = scan.nextLine();<span class="comment">//输入字符串，可包含空格</span></span><br><span class="line">        str_2 = scan.next();<span class="comment">//输入字符串，不包含空格</span></span><br><span class="line">        scan.close();<span class="comment">//关闭输入流 一旦关闭则无法再读入</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -295,8 +295,8 @@
 <ul>
 <li>其他修饰符</li>
 </ul>
-<p><code>static</code>表示类本身具有的字段&#x2F;方法，不局限于某个实例</p>
-<p><code>static</code>方法中不能使用<code>this</code>、<code>super</code></p>
+<p><code>static</code>表示类本身具有的字段&#x2F;方法，不局限于某个实例，使用时为<code>类名.方法名()</code></p>
+<p><code>static</code>方法中不能使用<code>this</code>、<code>super</code>,可以被子类重写</p>
 <p><code>final</code>类不可以被继承 字段不可以被修改 方法不可以被重写</p>
 <p><code>static final=const</code></p>
 <p><code>abstract</code>抽象类不能实例化，只能被<code>extends </code>方法只能定义（用;不用{}）然后被子类重写</p>
@@ -310,7 +310,7 @@
 <ul>
 <li>实现接口</li>
 </ul>
-<p><code>implements</code> 可以实现多个接口</p>
+<p><code>implements</code> 可以实现多个接口，每个接口不用实现全部方法</p>
 <h4 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">public</span>] <span class="keyword">interface</span> <span class="title class_">InterfaceName</span> [<span class="keyword">extends</span> <span class="title class_">superInterfaceList</span>]&#123;</span><br><span class="line">    <span class="type">type</span> <span class="variable">constantName</span> <span class="operator">=</span> Value;<span class="comment">//常量声明 </span></span><br><span class="line"></span><br><span class="line">    returnType <span class="title function_">methodName</span><span class="params">([paramList])</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 
@@ -321,7 +321,14 @@
 </li>
 <li><p>接口中的方法均为<code>public abstract</code></p>
 </li>
+<li><p>接口与抽象类的区别</p>
+</li>
 </ul>
+<p>1.抽象类是对一种事物的抽象，即对类抽象，而接口是对行为的抽象。抽象类是对整个类整体进行抽象，包括属性、行为，但是接口却是对类局部（行为）进行抽象。
+　　</p>
+<p>2.设计层面不同，抽象类作为很多子类的父类，它是一种模板式设计。而接口是一种行为规范，它是一种辐射式设计。
+　　</p>
+<p>3.抽象类是一个类，而接口不是类。</p>
 <h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
 <li>基本型变量和引用型变量</li>
 </ul>
@@ -347,7 +354,49 @@
 <li>字段变量和局部变量</li>
 </ul>
 <p>字段变量属于类，在堆中，可被访问控制符修饰。局部变量在栈中，只能被<code>final</code>修饰</p>
-<h2 id="进阶操作"><a href="#进阶操作" class="headerlink" title="进阶操作"></a>进阶操作</h2>
+<h2 id="进阶操作"><a href="#进阶操作" class="headerlink" title="进阶操作"></a>进阶操作</h2><h3 id="多态与虚方法调用"><a href="#多态与虚方法调用" class="headerlink" title="多态与虚方法调用"></a>多态与虚方法调用</h3><ul>
+<li><p>多态包括编译时多态：重载同名的不同方法（@Overload）和运行时多态：重写（@Override）动态绑定和虚方法调用</p>
+</li>
+<li><p>上溯造型（upcasting）</p>
+</li>
+</ul>
+<p>父类可以引用到子类上,如<code>Person p = new Student()</code>，同时父类的形参也可以传入子类的实参</p>
+<ul>
+<li>虚方法调用</li>
+</ul>
+<p>所有的方法，除static（属于类）、final（不会被子类重写）、private（子类看不见）都是虚方法。</p>
+<p>虚方法在调用时，根据调用该方法的<strong>实例的类型</strong>进行动态绑定，决定使用哪个方法。</p>
+<p>例如：当父类引用到子类上时，p的引用类型实际上为子类Student，声明类型为Person。这时如果子类（p的类型）重写了父类的某个虚方法，在调用这个方法时会动态绑定到子类的这个方法上。但是p的其他方法和字段会根据声明的类型确定，即Person类。</p>
+<p>static方法因为不是虚方法，因此他的调用取决于声明类型而不是引用类型</p>
+<h3 id="对象构造"><a href="#对象构造" class="headerlink" title="对象构造"></a>对象构造</h3><ul>
+<li>构造方法</li>
+</ul>
+<p>所以类都有构造方法。不写会自动加默认构造方法。抽象类也有构造方法，但需要被子类重写。</p>
+<p>构造方法可以有多个（重载），可以用<code>this</code>调用本类的其他构造方法。子类可以用<code>super</code>调用父类的构造方法。</p>
+<p><strong>调用时super和this必须放在第一行且一个构造函数只能调用一个构造函数</strong></p>
+<p>子类的构造方法会自动在第一行调用<code>super</code>即父类的默认构造方法。因为只有父类构造好才能构造子类。注意如果父类的构造方法需要参数，则子类必须手动写<code>super</code>，因为调用默认构造方法时没有参数会出错。</p>
+<p>一种特殊写法（创建实例时）:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">p = <span class="keyword">new</span> <span class="title class_">Person</span>()&#123;&#123;age = <span class="number">18</span>; name = <span class="string">&quot;Bob&quot;</span>;&#125;&#125;;<span class="comment">//双括号</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>实例初始化与静态初始化</li>
+</ul>
+<p>实例初始化：在类中直接写<code>&#123;expr...&#125;</code>先于构造方法中的语句执行。</p>
+<p>静态初始化：类中写<code>static &#123;expr...&#125;</code>在第一次用到这个类时执行，先于实例初始化。</p>
+<ul>
+<li>构造顺序</li>
+</ul>
+<p>1.先执行<code>this()</code>或<code>super()</code></p>
+<p>2.执行字段初始化（字段定义时赋的值）和实例、静态初始化</p>
+<p>3.执行构造函数其他语句</p>
+<p>在构造方法中尽量避免调用别的非构造方法</p>
+<h3 id="对象清除与垃圾回收"><a href="#对象清除与垃圾回收" class="headerlink" title="对象清除与垃圾回收"></a>对象清除与垃圾回收</h3><p>对象会自动被系统回收，无需删除。任何对象都有一个引用计时器，当为0时会自动被Java虚拟机垃圾回收线程回收。</p>
+<p><code>System.gc()</code>可以建议此时进行一次垃圾回收。</p>
+<p>Java中没有析构方法。但是可以写<code>protected void finalize()&#123;&#125;</code>方法，此方法会在对象被回收时自动调用。一般来说，子类的<code>finalize()</code>方法中应当调用父类的<code>super.finalize()</code>。</p>
+<p>可以使用以下try-with-resources语句</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>(类名 实例名 = <span class="keyword">new</span> 类名())&#123;</span><br><span class="line">    expr...</span><br><span class="line">&#125;<span class="comment">//执行完之后此实例会被自动回收并调用close方法</span></span><br></pre></td></tr></table></figure>
+<p>要构造一个能被try-with-resources块正确处理的自定义资源，此类应该实现Closeable或AutoCloseable接口，并重写它的close方法:</p>
+<p>比如Scanner类</p>
+
       
     </div>
 
