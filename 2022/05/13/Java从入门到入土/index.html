@@ -20,16 +20,16 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="基本特征 Java核心机制：JVM虚拟机、代码安全性检测、垃圾回收  JDK&#x3D;JRE(JVM+API)+Tools  面向对象:继承、封装、多态  程序分类：Applet(嵌入网页)、Application  Tools: javac编译 java运行 jar打包 javadoc生成文档 javap反汇编 基础语法  输入输出1.使用Scanner类输入 先创建Scanner类对象  1">
+  <meta name="description" content="基本特征 JAVA核心机制：JVM虚拟机、代码安全性检测、垃圾回收  JDK&#x3D;JRE(JVM+API)+Tools  面向对象:继承、封装、多态  程序分类：Applet(嵌入网页)、Application  Tools: javac编译 java运行 jar打包 javadoc生成文档 javap反汇编 基础语法  输入输出1.使用Scanner类输入 先创建Scanner类对象  1">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java从入门到入土">
 <meta property="og:url" content="http://example.com/2022/05/13/Java%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9C%9F/index.html">
 <meta property="og:site_name" content="Alioth&#39;s blog">
-<meta property="og:description" content="基本特征 Java核心机制：JVM虚拟机、代码安全性检测、垃圾回收  JDK&#x3D;JRE(JVM+API)+Tools  面向对象:继承、封装、多态  程序分类：Applet(嵌入网页)、Application  Tools: javac编译 java运行 jar打包 javadoc生成文档 javap反汇编 基础语法  输入输出1.使用Scanner类输入 先创建Scanner类对象  1">
+<meta property="og:description" content="基本特征 JAVA核心机制：JVM虚拟机、代码安全性检测、垃圾回收  JDK&#x3D;JRE(JVM+API)+Tools  面向对象:继承、封装、多态  程序分类：Applet(嵌入网页)、Application  Tools: javac编译 java运行 jar打包 javadoc生成文档 javap反汇编 基础语法  输入输出1.使用Scanner类输入 先创建Scanner类对象  1">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.luogu.com.cn/upload/image_hosting/byw8n3g0.png">
 <meta property="article:published_time" content="2022-05-13T08:09:00.000Z">
-<meta property="article:modified_time" content="2022-05-14T02:35:38.067Z">
+<meta property="article:modified_time" content="2022-05-17T10:59:43.914Z">
 <meta property="article:author" content="Alioth">
 <meta property="article:tag" content="Java">
 <meta name="twitter:card" content="summary">
@@ -221,7 +221,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-14 10:35:38" itemprop="dateModified" datetime="2022-05-14T10:35:38+08:00">2022-05-14</time>
+                <time title="修改时间：2022-05-17 18:59:43" itemprop="dateModified" datetime="2022-05-17T18:59:43+08:00">2022-05-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -266,7 +266,7 @@
 
       
         <h2 id="基本特征"><a href="#基本特征" class="headerlink" title="基本特征"></a>基本特征</h2><ul>
-<li><p>Java核心机制：JVM虚拟机、代码安全性检测、垃圾回收</p>
+<li><p>JAVA核心机制：JVM虚拟机、代码安全性检测、垃圾回收</p>
 </li>
 <li><p>JDK&#x3D;JRE(JVM+API)+Tools</p>
 </li>
@@ -283,20 +283,16 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">        <span class="type">Scanner</span> <span class="variable">scan</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">Scanner</span>(System.in);</span><br><span class="line">        <span class="type">String</span> <span class="variable">str_1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>();</span><br><span class="line">        <span class="type">String</span> <span class="variable">str_2</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>();</span><br><span class="line">        <span class="type">int</span> <span class="variable">num_1</span> <span class="operator">=</span> scan.nextInt();<span class="comment">//输入整数</span></span><br><span class="line">        <span class="type">double</span> <span class="variable">num_2</span> <span class="operator">=</span> scan.nextFloat();<span class="comment">//输入浮点数</span></span><br><span class="line">        str_1 = scan.nextLine();<span class="comment">//输入字符串，可包含空格</span></span><br><span class="line">        str_2 = scan.next();<span class="comment">//输入字符串，不包含空格</span></span><br><span class="line">        scan.close();<span class="comment">//关闭输入流 一旦关闭则无法再读入</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p>2.使用BufferedReader类输入</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">test</span> &#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">        <span class="type">int</span> num_1;</span><br><span class="line">        <span class="type">String</span> <span class="variable">str_1</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">String</span>();</span><br><span class="line">        <span class="type">BufferedReader</span> <span class="variable">bf</span> <span class="operator">=</span> <span class="keyword">new</span> <span class="title class_">BufferedReader</span>(<span class="keyword">new</span> <span class="title class_">InputStreamReader</span>(System.in));</span><br><span class="line">        <span class="comment">//可能会有异常 要用try-catch</span></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            str_1 = bf.readLine();<span class="comment">//读取一行字符串</span></span><br><span class="line">            num_1 = bf.read();<span class="comment">//读取单个字符并返回随对应的ASCII码</span></span><br><span class="line">            bf.close();</span><br><span class="line">        &#125; <span class="keyword">catch</span> (IOException e)&#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>3.输出 使用<code>System.out</code></p>
+<p>3.输出 使用System.out</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;hello world&quot;</span>);<span class="comment">//换行输出</span></span><br><span class="line">    System.out.print(<span class="string">&quot;hello world&quot;</span>);<span class="comment">//不换行输出</span></span><br><span class="line">    System.out.printf(<span class="string">&quot;%.2f&quot;</span>, <span class="number">3.14</span>);<span class="comment">//格式化输出</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <h3 id="数据、运算、流程控制"><a href="#数据、运算、流程控制" class="headerlink" title="数据、运算、流程控制"></a>数据、运算、流程控制</h3><ul>
-<li>数组</li>
-</ul>
+<li><p>数组</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> [] a = <span class="keyword">new</span> <span class="title class_">int</span>[size];<span class="comment">//一维</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> [][] a = <span class="keyword">new</span> <span class="title class_">int</span>[<span class="number">3</span>][];<span class="comment">//二维</span></span><br><span class="line">a[<span class="number">0</span>] = <span class="keyword">new</span> <span class="title class_">int</span>[size];</span><br><span class="line">...</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>break和continue</li>
-</ul>
+</li>
+<li><p>break和continue</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">label: <span class="keyword">while</span>()&#123;&#125;</span><br><span class="line"><span class="keyword">break</span>/<span class="keyword">continue</span> label;<span class="comment">//可以加参数跳转到指定标签</span></span><br></pre></td></tr></table></figure>
-
-<ul>
+</li>
 <li><p><code>&gt;&gt;</code>带符号右移位  <code>&gt;&gt;&gt;</code>无符号右移位</p>
 </li>
 <li><p><code>&amp; ｜</code>可以表示逻辑运算 <code>&amp;&amp; ||</code>表示短路逻辑运算（第一个成立则不判断第二个）</p>
@@ -326,9 +322,10 @@
 <ul>
 <li>继承</li>
 </ul>
+<p>所有类的父类均为Object类</p>
 <p>只能<code>extends</code>一个父类，可用<code>super</code>代指</p>
 <p><code>this super</code>作构造函数时要放在第一行</p>
-<p>子类可以@override 重写父类方法</p>
+<p>子类可以@Override 重写父类方法</p>
 <ul>
 <li>实现接口</li>
 </ul>
@@ -344,7 +341,32 @@
 <li><p>接口中的方法均为<code>public abstract</code></p>
 </li>
 </ul>
-<h4 id="枚举类"><a href="#枚举类" class="headerlink" title="枚举类"></a>枚举类</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">enum</span> <span class="title class_">Light</span>&#123;red, yellow, green&#125;<span class="comment">//定义</span></span><br><span class="line"><span class="type">Light</span> <span class="variable">light</span> <span class="operator">=</span> Light.red;</span><br><span class="line"><span class="keyword">switch</span>(light)&#123;<span class="keyword">case</span> red:... <span class="keyword">break</span>;&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h3><ul>
+<li>基本型变量和引用型变量</li>
+</ul>
+<p>基本型<strong>存储在栈中</strong>，如<code>int x = 5;</code>值直接存在变量中 </p>
+<p>引用型<strong>存储在堆中</strong>，对象实体由<code>new</code>创建，变量赋值时传递的是引用关系，即不同变量都可修改一个实体</p>
+<p>所有class都是Object类的子类，故class都是引用型</p>
+<p>基本类型的包装类可以将基本型变为引用型，分别为：<br><code>Integer Boolean Byte Short Character Long Float Double</code></p>
+<p>如<code>Integer I = new Integer(10);</code></p>
+<p>基本型和引用型可以转换，<strong>装箱</strong>就是把基本数据类型存储在堆中，把他变成引用类型；反过来<strong>拆箱</strong>，就是把引用类型中的数据放到栈中，要把它变成基本数据类型。</p>
+<p>如</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">Integer</span> <span class="variable">I</span> <span class="operator">=</span> <span class="number">10</span>;<span class="comment">//装箱</span></span><br><span class="line"><span class="type">int</span> <span class="variable">i</span> <span class="operator">=</span> I;<span class="comment">//拆箱</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>变量的判等 <code>==</code></li>
+</ul>
+<p>基本型变量判断值是否相等</p>
+<p>引用型判断引用的是不是同一个对象实体</p>
+<p>装箱对象：</p>
+<p>实际上调用了<code>Integer I = Integer.valueOf(10)</code>此函数在值为-128到127之间有缓存，可以根据值判等。不在此范围内的即使值相等了但由于不是同一引用对象也判为不相等。</p>
+<p><code>string</code>：</p>
+<p>为引用类型。故要用<code>str1.equals(str2)</code>判断值是否相等。若为字符串常量 如<code>&quot;Hello&quot;</code> 因为常量会被内部化<code>intern</code>，在栈中常量池产生实体对象，所以可以用<code>==</code>判等</p>
+<ul>
+<li>字段变量和局部变量</li>
+</ul>
+<p>字段变量属于类，在堆中，可被访问控制符修饰。局部变量在栈中，只能被<code>final</code>修饰</p>
+<h2 id="进阶操作"><a href="#进阶操作" class="headerlink" title="进阶操作"></a>进阶操作</h2>
     </div>
 
     
@@ -418,7 +440,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81"><span class="nav-number">1.</span> <span class="nav-text">基本特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="nav-number">2.1.</span> <span class="nav-text">输入输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E3%80%81%E8%BF%90%E7%AE%97%E3%80%81%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="nav-number">2.2.</span> <span class="nav-text">数据、运算、流程控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.3.</span> <span class="nav-text">面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-number">2.3.1.</span> <span class="nav-text">类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3"><span class="nav-number">2.3.2.</span> <span class="nav-text">接口</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%9A%E4%B8%BE%E7%B1%BB"><span class="nav-number">2.3.3.</span> <span class="nav-text">枚举类</span></a></li></ol></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E7%89%B9%E5%BE%81"><span class="nav-number">1.</span> <span class="nav-text">基本特征</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95"><span class="nav-number">2.</span> <span class="nav-text">基础语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA"><span class="nav-number">2.1.</span> <span class="nav-text">输入输出</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E3%80%81%E8%BF%90%E7%AE%97%E3%80%81%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6"><span class="nav-number">2.2.</span> <span class="nav-text">数据、运算、流程控制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.3.</span> <span class="nav-text">面向对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-number">2.3.1.</span> <span class="nav-text">类</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3"><span class="nav-number">2.3.2.</span> <span class="nav-text">接口</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">2.4.</span> <span class="nav-text">变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6%E6%93%8D%E4%BD%9C"><span class="nav-number">3.</span> <span class="nav-text">进阶操作</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
