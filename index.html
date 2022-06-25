@@ -214,7 +214,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-05-18 23:20:37" itemprop="dateModified" datetime="2022-05-18T23:20:37+08:00">2022-05-18</time>
+                <time title="修改时间：2022-06-25 23:03:44" itemprop="dateModified" datetime="2022-06-25T23:03:44+08:00">2022-06-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -421,6 +421,19 @@
 <p>例如</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">interface</span> <span class="title class_">Fun</span>&#123;<span class="comment">//一个接口</span></span><br><span class="line">    <span class="type">double</span> <span class="title function_">fun</span><span class="params">(<span class="type">int</span> x)</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="type">double</span> <span class="title function_">Integral</span><span class="params">(Fun f, <span class="type">double</span> a, <span class="type">double</span> b)</span>&#123;</span><br><span class="line">    <span class="comment">//对f.fun函数的积分</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//调用时可以写为</span></span><br><span class="line"><span class="comment">//使用匿名类实现接口</span></span><br><span class="line">Integral(<span class="keyword">new</span> <span class="title class_">Fun</span>()&#123;</span><br><span class="line">    <span class="type">double</span> <span class="title function_">fun</span><span class="params">(<span class="type">int</span> x)</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> x+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,a, b);</span><br><span class="line"></span><br><span class="line"><span class="comment">//使用lambda表达式实现接口</span></span><br><span class="line">Integral(x -&gt; x+<span class="number">1</span>, a, b);</span><br></pre></td></tr></table></figure>
 <p>实现哪个接口由形参决定。由于没有决定实现接口的哪个方法，故该接口只能有一个方法。这样的接口用注记表示为<code>@FunctionalInterface</code>函数式接口</p>
+<h3 id="异常处理"><a href="#异常处理" class="headerlink" title="异常处理"></a>异常处理</h3><p>受检的异常必须处理，要么抛出异常要么捕获异常，抛出为</p>
+<p><code>throw 异常对象</code></p>
+<p>在函数名称后面要加上<code>throws 异常</code>，若子类继承父类，重写方法时也要声明</p>
+<p>捕获为</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">try</span>&#123;</span><br><span class="line">    语句</span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类 异常名称)&#123;</span><br><span class="line">    异常处理</span><br><span class="line">&#125;<span class="keyword">catch</span>(异常类 异常名称)&#123;</span><br><span class="line">    异常处理</span><br><span class="line">&#125;<span class="keyword">finally</span>&#123;</span><br><span class="line">    异常处理</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>catch子类异常在父类前面，捕获某个异常后自动跳到catch中，finally一定会被执行（无论有没有异常）</p>
+<p>处理时，要么将当前异常再次抛出，要么生成一个更详细的新异常，添加信息后抛出。</p>
+<p>Throwable类的子类有Error类和Exception类</p>
+<p>Error类为JVM的错误</p>
+<p>所有异常都为Exception类的子类</p>
+<p>构造方法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Exception(String message, Throwable cause)</span><br><span class="line"></span><br><span class="line">Exception(String message)</span><br><span class="line"></span><br><span class="line">Exception()</span><br></pre></td></tr></table></figure>
+<p>方法有<code>getmessage</code>、<code>getcause</code>等</p>
 
       
     </div>
