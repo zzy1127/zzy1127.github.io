@@ -183,6 +183,89 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/13/Tensorflow%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Alioth">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Alioth's blog">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2022/05/13/Tensorflow%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">Tensorflow学习</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-05-13 16:09:00" itemprop="dateCreated datePublished" datetime="2022-05-13T16:09:00+08:00">2022-05-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2022-08-07 17:58:33" itemprop="dateModified" datetime="2022-08-07T17:58:33+08:00">2022-08-07</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a>
+                </span>
+            </span>
+
+          
+            <span id="/2022/05/13/Tensorflow%E5%AD%A6%E4%B9%A0/" class="post-meta-item leancloud_visitors" data-flag-title="Tensorflow学习" title="阅读次数">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span class="leancloud-visitors-count"></span>
+            </span>
+  
+  
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>最基本应用，实现fashion_mnist的图像分类</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 线性回归 relu配mse 逻辑回归（分类） softmax配crossentropy</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> tensorflow <span class="keyword">import</span> keras</span><br><span class="line"></span><br><span class="line"><span class="comment">#获取测试数据</span></span><br><span class="line">fashion_mnist = keras.datasets.fashion_mnist</span><br><span class="line">(train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()</span><br><span class="line"><span class="comment">#预处理</span></span><br><span class="line">train_images = train_images / <span class="number">255.0</span></span><br><span class="line">test_images = test_images / <span class="number">255.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#建立神经网络</span></span><br><span class="line">model = tf.keras.Sequential()</span><br><span class="line">model.add(tf.keras.layers.Flatten(input_shape=(<span class="number">28</span>,<span class="number">28</span>))) <span class="comment">#把二维图片变成一维</span></span><br><span class="line">model.add(tf.keras.layers.Dense(<span class="number">128</span>, activation=<span class="string">&#x27;relu&#x27;</span>)) <span class="comment">#添加一个128节点的中间层</span></span><br><span class="line">model.add(tf.keras.layers.Dropout(<span class="number">0.5</span>)) <span class="comment">#0.5为舍弃概率</span></span><br><span class="line">model.add(tf.keras.layers.Dense(<span class="number">128</span>, activation=<span class="string">&#x27;relu&#x27;</span>)) <span class="comment">#添加一个128节点的中间层</span></span><br><span class="line">model.add(tf.keras.layers.Dense(<span class="number">10</span>, activation=<span class="string">&#x27;softmax&#x27;</span>)) <span class="comment">#输出层10个节点</span></span><br><span class="line"><span class="comment">#层数、节点数太多会过拟合 即只认识训练数据不认识测试数据</span></span><br><span class="line"><span class="comment">#太少会欠拟合 导致正确率都很低</span></span><br><span class="line"><span class="comment">#可以通过增加添加测试数据、减少网络容量、添加Dropout层抑制过拟合</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#神经网络编译 设置优化器 损失函数 测量值等</span></span><br><span class="line">model.<span class="built_in">compile</span>(optimizer=<span class="string">&#x27;adam&#x27;</span>, <span class="comment">#梯度下降算法</span></span><br><span class="line">              loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, <span class="comment">#损失函数</span></span><br><span class="line">              <span class="comment"># 当编码为独热编码时 用categorical_crossentropy</span></span><br><span class="line">              metrics=[<span class="string">&#x27;acc&#x27;</span>] <span class="comment">#测量准确度</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">#开始训练 epochs为训练次数</span></span><br><span class="line"><span class="comment">#batch_size为每次迭代更新参数使用样本的个数 如果等于数据集大小则参数只更新一次速度很快 默认为32</span></span><br><span class="line">model.fit(train_images, train_labels, epochs=<span class="number">10</span>, batch_size=<span class="number">20</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#测试准确率</span></span><br><span class="line">model.evaluate(test_images, test_labels)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/13/Java%E4%BB%8E%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9C%9F/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -270,89 +353,6 @@
             </div>
           <!--/noindex-->
         
-      
-    </div>
-
-    
-    
-    
-      <footer class="post-footer">
-        <div class="post-eof"></div>
-      </footer>
-  </article>
-  
-  
-  
-
-      
-  
-  
-  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2022/05/13/Tensorflow%E5%AD%A6%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/avatar.gif">
-      <meta itemprop="name" content="Alioth">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Alioth's blog">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          
-            <a href="/2022/05/13/Tensorflow%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">Tensorflow学习</a>
-        </h2>
-
-        <div class="post-meta">
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-calendar"></i>
-              </span>
-              <span class="post-meta-item-text">发表于</span>
-
-              <time title="创建时间：2022-05-13 16:09:00" itemprop="dateCreated datePublished" datetime="2022-05-13T16:09:00+08:00">2022-05-13</time>
-            </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2022-08-05 21:28:32" itemprop="dateModified" datetime="2022-08-05T21:28:32+08:00">2022-08-05</time>
-              </span>
-            <span class="post-meta-item">
-              <span class="post-meta-item-icon">
-                <i class="far fa-folder"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a>
-                </span>
-            </span>
-
-          
-            <span id="/2022/05/13/Tensorflow%E5%AD%A6%E4%B9%A0/" class="post-meta-item leancloud_visitors" data-flag-title="Tensorflow学习" title="阅读次数">
-              <span class="post-meta-item-icon">
-                <i class="fa fa-eye"></i>
-              </span>
-              <span class="post-meta-item-text">阅读次数：</span>
-              <span class="leancloud-visitors-count"></span>
-            </span>
-  
-  
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-          <p>最基本应用，实现fashion_mnist的图像分类</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 线性回归 relu配mse 逻辑回归（分类） softmax配crossentropy</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> tensorflow <span class="keyword">import</span> keras</span><br><span class="line"></span><br><span class="line"><span class="comment">#获取测试数据</span></span><br><span class="line">fashion_mnist = keras.datasets.fashion_mnist</span><br><span class="line">(train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()</span><br><span class="line"><span class="comment">#预处理</span></span><br><span class="line">train_images = train_images / <span class="number">255.0</span></span><br><span class="line">test_images = test_images / <span class="number">255.0</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#建立神经网络</span></span><br><span class="line">model = tf.keras.Sequential()</span><br><span class="line">model.add(tf.keras.layers.Flatten(input_shape=(<span class="number">28</span>,<span class="number">28</span>))) <span class="comment">#把二维图片变成一维</span></span><br><span class="line">model.add(tf.keras.layers.Dense(<span class="number">128</span>, activation=<span class="string">&#x27;relu&#x27;</span>)) <span class="comment">#添加一个128节点的中间层</span></span><br><span class="line">model.add(tf.keras.layers.Dropout(<span class="number">0.5</span>)) <span class="comment">#0.5为舍弃概率</span></span><br><span class="line">model.add(tf.keras.layers.Dense(<span class="number">128</span>, activation=<span class="string">&#x27;relu&#x27;</span>)) <span class="comment">#添加一个128节点的中间层</span></span><br><span class="line">model.add(tf.keras.layers.Dense(<span class="number">10</span>, activation=<span class="string">&#x27;softmax&#x27;</span>)) <span class="comment">#输出层10个节点</span></span><br><span class="line"><span class="comment">#层数、节点数太多会过拟合 即只认识训练数据不认识测试数据</span></span><br><span class="line"><span class="comment">#太少会欠拟合 导致正确率都很低</span></span><br><span class="line"><span class="comment">#可以通过增加添加测试数据、减少网络容量、添加Dropout层抑制过拟合</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#神经网络编译 设置优化器 损失函数 测量值等</span></span><br><span class="line">model.<span class="built_in">compile</span>(optimizer=<span class="string">&#x27;adam&#x27;</span>, <span class="comment">#梯度下降算法</span></span><br><span class="line">              loss=<span class="string">&#x27;sparse_categorical_crossentropy&#x27;</span>, <span class="comment">#损失函数</span></span><br><span class="line">              <span class="comment"># 当编码为独热编码时 用categorical_crossentropy</span></span><br><span class="line">              metrics=[<span class="string">&#x27;acc&#x27;</span>] <span class="comment">#测量准确度</span></span><br><span class="line">)</span><br><span class="line"><span class="comment">#开始训练 epochs为训练次数 batch_size为抓取样本数量的分母 相当于60000/32个</span></span><br><span class="line">model.fit(train_images, train_labels, epochs=<span class="number">10</span>, batch_size=<span class="number">20</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">#测试准确率</span></span><br><span class="line">model.evaluate(test_images, test_labels)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
       
     </div>
 
